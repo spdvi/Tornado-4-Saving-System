@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FPS Sample HUD Saving.unity
+    guid: 51b986e7131bd5148aedee696b1e003d
   m_configObjects: {}

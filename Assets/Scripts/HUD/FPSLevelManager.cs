@@ -1,10 +1,11 @@
+using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
 using Tornado4.Player;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FPSLevelManager : MonoBehaviour
+public class FPSLevelManager : MonoBehaviour, IJsonSaveable
 {
     public TextMeshProUGUI coinsText;
     public GameObject youWinCanvas;
@@ -17,7 +18,18 @@ public class FPSLevelManager : MonoBehaviour
     private int coins = 0;
     public float countDownTime  = 3.0f;
     
-    public GameObject savingSystem;
+    public SavingSystem savingSystem;
+
+    public JToken CaptureAsJToken()
+    {
+        JToken countDownTimeJToken = JToken.FromObject(countDownTime);
+        return countDownTimeJToken;
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        countDownTime = state.ToObject<float>();
+    }
     
     private void Start()
     {
@@ -36,7 +48,7 @@ public class FPSLevelManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            
+            savingSystem.Save("game4");
         }
         
         if (Input.GetKeyDown(KeyCode.L))
