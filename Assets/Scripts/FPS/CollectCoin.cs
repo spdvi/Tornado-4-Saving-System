@@ -7,6 +7,7 @@ using UnityEngine;
 public class CollectCoin : MonoBehaviour, IJsonSaveable
 {
     private FPSLevelManager levelManager;
+    private bool hasBeenCollected = false;
 
     private void OnEnable()
     {
@@ -19,21 +20,30 @@ public class CollectCoin : MonoBehaviour, IJsonSaveable
         {
             //Debug.Log("Collect Coin");
             levelManager.CoinCollected();
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+            hasBeenCollected = true;
         }
     }
 
     public JToken CaptureAsJToken()
     {
-        CoinData nombreYPosicion = new CoinData();
-        nombreYPosicion.CoinName = this.gameObject.name;
-        nombreYPosicion.CoinPosition = this.gameObject.transform.position.ToToken();
-        JToken nombreYPosicionJToken = JToken.FromObject(nombreYPosicion);
-        return nombreYPosicionJToken;
+        return JToken.FromObject(hasBeenCollected);
     }
 
     public void RestoreFromJToken(JToken state)
     {
-        throw new NotImplementedException();
+        hasBeenCollected = state.ToObject<bool>();
+        if (hasBeenCollected)
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+            GetComponent<Collider>().enabled = true;
+        }
     }
 }
