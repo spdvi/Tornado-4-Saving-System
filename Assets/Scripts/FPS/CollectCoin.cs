@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class CollectCoin : MonoBehaviour, IJsonSaveable
 {
-    private FPSLevelManager levelManager;
+    private CoinsManager coinsManager;
     private bool hasBeenCollected = false;
 
     private void OnEnable()
     {
-        levelManager = GameObject.FindObjectOfType<FPSLevelManager>();
+        coinsManager = GameObject.FindObjectOfType<CoinsManager>();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -19,7 +19,7 @@ public class CollectCoin : MonoBehaviour, IJsonSaveable
         if (other.gameObject.tag == "Player")
         {
             //Debug.Log("Collect Coin");
-            levelManager.CoinCollected();
+            coinsManager.UpdateCoinCount();
             //Destroy(this.gameObject);
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;

@@ -15,7 +15,6 @@ public class FPSLevelManager : MonoBehaviour, IJsonSaveable
     public Image healthBarImage;
     public Transform player;
     
-    private int coins = 0;
     public float countDownTime  = 3.0f;
     
     public SavingSystem savingSystem;
@@ -58,11 +57,10 @@ public class FPSLevelManager : MonoBehaviour, IJsonSaveable
         
     }
 
-    public void CoinCollected()
+    public void CheckCoinsAndUpdateUI(int coins)
     {
-        coins++;
         coinsText.text = coins.ToString();
-
+        
         if (coins == 3)
         {
             WinGame();
