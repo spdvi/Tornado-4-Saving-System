@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-public class DetectPresence : MonoBehaviour
+public class DetectPresence : MonoBehaviour, IJsonSaveable
 {
     public Light light;
-    private float lightIntensity = 0.1f;
     private float elapsedTime = 0;
     private void OnTriggerEnter(Collider other)
     {
@@ -35,5 +35,16 @@ public class DetectPresence : MonoBehaviour
         light.enabled = false;
         light.intensity = 0f;
         Debug.Log("Light is off");
+    }
+
+    public JToken CaptureAsJToken()
+    {
+        JToken lightIntensityJToken = JToken.FromObject(light.intensity);
+        return lightIntensityJToken;
+    }
+
+    public void RestoreFromJToken(JToken state)
+    {
+        light.intensity = state.ToObject<float>();
     }
 }
