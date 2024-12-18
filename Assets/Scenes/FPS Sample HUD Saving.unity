@@ -1192,6 +1192,7 @@ GameObject:
   - component: {fileID: 336029590}
   - component: {fileID: 336029589}
   - component: {fileID: 336029593}
+  - component: {fileID: 336029594}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -1288,6 +1289,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48789657ce750c74c888f5a0dc4fba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &336029594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336029588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc301d90e9ca52942b21beb93b44d44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: b0b8a27a-dc2b-4a29-ab52-aa9e897e46a7
 --- !u!1 &361732517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,6 +2415,7 @@ GameObject:
   - component: {fileID: 703619776}
   - component: {fileID: 703619775}
   - component: {fileID: 703619774}
+  - component: {fileID: 703619779}
   m_Layer: 0
   m_Name: Coin (2)
   m_TagString: Untagged
@@ -2497,6 +2512,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -68.23}
+--- !u!114 &703619779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703619773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc301d90e9ca52942b21beb93b44d44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: d0a52ddf-faa8-459e-97f9-9ebc7655804e
 --- !u!1 &717016921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,6 +4849,7 @@ GameObject:
   - component: {fileID: 2082931365}
   - component: {fileID: 2082931364}
   - component: {fileID: 2082931363}
+  - component: {fileID: 2082931368}
   m_Layer: 0
   m_Name: Coin (1)
   m_TagString: Untagged
@@ -4917,6 +4946,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -68.23}
+--- !u!114 &2082931368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082931362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc301d90e9ca52942b21beb93b44d44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: bc667029-ef95-484c-bfe7-59f2495bc9f2
 --- !u!1 &2139918959
 GameObject:
   m_ObjectHideFlags: 0
